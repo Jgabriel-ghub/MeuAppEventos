@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Agenda15ds.MainPage"
+             Title="Cadastro de Eventos"
+             BackgroundColor="#F4F7FB">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="14">
+            <Label Text="Cadastro de Eventos"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   TextColor="#17213A" />
+            <Label Text="Preencha as informações do evento."
+                   FontSize="14"
+                   TextColor="#64748B" />
+
+            <Label Text="Nome do evento" TextColor="#17213A" />
+            <Entry x:Name="NomeEntry" Placeholder="Ex.: Feira de Tecnologia"
+                   Text="{Binding Nome, Mode=TwoWay}" BackgroundColor="White"
+                   TextColor="#17213A"
+                   PlaceholderColor="#64748B"/>
+
+            <Label Text="Data de início" TextColor="#17213A" />
+            <DatePicker Date="{Binding DataInicio, Mode=TwoWay}"
+                        Format="dd/MM/yyyy" BackgroundColor="White"
+                        TextColor="#17213A"/>
+
+            <Label Text="Data de término" TextColor="#17213A" />
+            <DatePicker Date="{Binding DataTermino, Mode=TwoWay}"
+                        Format="dd/MM/yyyy" BackgroundColor="White"
+                        TextColor="#17213A"/>
+
+            <Label Text="Número de participantes" TextColor="#17213A" />
+            <Entry x:Name="ParticipantesEntry" Placeholder="Ex.: 50"
+                   Keyboard="Numeric" BackgroundColor="White"
+                   TextColor="#17213A"
+                   PlaceholderColor="#64748B"/>
+
+            <Label Text="Local do evento" TextColor="#17213A" />
+            <Entry Placeholder="Ex.: São Paulo"
+                   Text="{Binding Local, Mode=TwoWay}" BackgroundColor="White"
+                   TextColor="#17213A"
+                   PlaceholderColor="#64748B"/>
+
+            <Label Text="Custo por participante (R$)" TextColor="#17213A" />
+            <Entry x:Name="CustoEntry" Placeholder="Ex.: 50,00"
+                   Keyboard="Numeric" BackgroundColor="White"
+                   TextColor="#17213A"
+                   PlaceholderColor="#64748B"/>
+
+            <Button Text="Cadastrar evento"
+                    Clicked="CadastrarEvento_Clicked"
+                    BackgroundColor="#1769E0"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Margin="0,10,0,0" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
